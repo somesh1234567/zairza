@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<title>To Do List</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+ <div class="container">
+	 <input type="text" class="hero" placeholder="title..">
+	<div class="notcomp">
+		<h3>task not completed</h3>
+
+	</div>
+
+	<div class="comp">
+   <h3>task completed</h3>
+
+	</div>
+ </div>
+ <script type="text/javascript">
+ $(".hero").on("keyup",function(e){
+	 if (e.keyCode == 13 && $(".hero").val() != "")
+	  {
+			var task = $("<div class='task'></div>").text($(".hero").val());
+			var delet = $("<i class='fas fa-trash-alt'></i>").click(function(){
+				var p = $(this).parent();
+				p.fadeOut(function(){
+					p.remove();
+				});
+			});
+			var check = $("<i class='fas fa-check'></i>").click(function(){
+				var p = $(this).parent();
+				p.fadeOut(function(){
+					$(".comp").append(p);
+					p.fadeIn();
+				});
+			});
+
+			task.append(delet,check);
+		$(".notcomp").append(task);
+		$(".hero").val("");
+	 }
+ });
+ </script>
+
+</body>
+</html>

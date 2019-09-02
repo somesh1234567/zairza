@@ -1,0 +1,42 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+body{
+	background:yellow;
+	min-height: 100vh;
+}
+.container{
+	max-width: 700px;
+	margin: auto;
+	padding: 10px;
+}
+.hero{
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid #000;
+	background: none;
+	padding: inherit;
+	outline: none;
+	font-size: 15px;
+}
+h3{
+	margin: 10px 0;
+}
+.task{
+	width: 100%;
+	background: blue;
+	margin: 6px 0;
+	padding: 10px;
+	overflow: hidden;
+}
+.task i{
+	float: right;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.comp .task{
+	background: rgba(255, 0, 0, 0.5);
+}
